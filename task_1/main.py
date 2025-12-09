@@ -8,7 +8,8 @@ List_of_books = [
 
 index = 1
 
-for i in List_of_books:
+for i,List_of_books in enumerate(List_of_books):
     print(f"---------------------- Книга№{index} ----------------------")
-    print(f"Название: {List_of_books[i]["title"]}, Автор: {List_of_books[i]["author"]}")
-    print(f"-------------------------{List_of_books[i]["year"]}-------------------------")
+    print(f"Название: {List_of_books['title']}, Автор: {List_of_books['author']}")
+    print(f"-------------------------{List_of_books['year']}-------------------------")
+    index += 1
