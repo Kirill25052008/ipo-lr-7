@@ -1,20 +1,20 @@
-import json
+import json# Добавляем библиотеку json
 
-file_name = "dump.json"
+file_name = "dump.json"# Создаём переменную file_name и присвайваем ей название json файла
 
-try:
-    with open(file_name, 'r', encoding='utf-8') as file:
-        data = json.load(file)
-except FileNotFoundError:
-    print(f"Файл {file_name} не найден!!!!!")
-except Exception as e:
-    print(f"Произошла ошибка: {e}")
+try:# Пробуем 
+    with open(file_name, 'r', encoding='utf-8') as file:# Открыть файл file_name на чтение
+        data = json.load(file)# Переменной data присвайваем содержимое файла file_name
+except FileNotFoundError:# Проверяем на ошибку FileNotFoundError
+    print(f"Файл {file_name} не найден!!!!!")# Если она есть, то выводим этот текст
+except Exception as e:# Проверяем на ошибку Exception e
+    print(f"Произошла ошибка: {e}")# Если она есть, то выводим этот текст
 
-qualification_input = input("Введите номер квалификации: ")
+qualification_input = input("Введите номер квалификации: ")# Просим пользователя ввести строку для поиска с клавиатуры
 
-found_list = []
+found_list = []# Создаём пустой список
 
-for item in data:
+for item in data:# Создаём цикл, который будет пробегаться по переменной data, которую мы создали раньше
     fields = item.get("fields", {})
     item_code = fields.get("code")
 
@@ -38,3 +38,4 @@ if found_list:
         print(i)
 else:
     print("=============== Не найдено ===============")
+
