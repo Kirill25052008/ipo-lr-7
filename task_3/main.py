@@ -1,13 +1,3 @@
-[# добавить в файл json
-    {"id" : 1, "name" : "Солнце", "constellation " : "нет", "is_visible " : "True", "radius " : 1.0},
-    {"id" : 2, "name" : "Сириус", "constellation " : "Большой Пес", "is_visible " : "True", "radius " : 1.7},
-    {"id" : 3, "name" : "Арктур", "constellation " : "Волопас", "is_visible " : "True", "radius " : 25.7},
-    {"id" : 4, "name" : "Вега", "constellation " : "Лира", "is_visible " : "True", "radius " : 2.7},
-    {"id" : 5, "name" : "Альтаир", "constellation " : "Орел", "is_visible " : "True", "radius " : 1.6}
-]
-
-
-
 import json# Добавляем библиотеку json
 
 file_name = "List.json"# Создаём переменную file_name и присвайваем ей название json файла
@@ -22,21 +12,22 @@ except Exception as e:# Проверяем на ошибку Exception e
     print(f"Произошла ошибка: {e}")# Если она есть, то выводим этот текст
 
 while True:
-    print("\nМеню:")
+    print("---------------Меню---------------")
     print("1. Вывести все записи")
     print("2. Вывести запись по полю (id)")
     print("3. Добавить запись")
     print("4. Удалить запись по полю (id)")
     print("5. Выйти из программы")
+    print("----------------------------------")
 
     choice = int(input("Выберите пункт меню (1-5): "))
 
     if choice == 1:
-        with open(file_name, 'r', encoding='utf-8') as f:
+        with open(file_name, 'r', encoding = 'utf - 8') as f:
             data = json.load(f)
         print("\nВсе записи:")
         for record in data:
-            print(f"ID: {f['id']}, Название: {f['name']}, Созвездие: {f['constellation']}, Видима: {f['is_visible']}, Радиус (солн.): {f['radius']}")
+            print(f"ID: {record['id']}, Название: {record['name']}, Созвездие: {record['constellation']}, Видима: {record['is_visible']}, Радиус (солн.): {record['radius']}")
         operations_count += 1
 
     elif choice == 2:
@@ -49,7 +40,7 @@ while True:
             for index, record in enumerate(data):
                 if record['id'] == id:
                     print(f"\nНайдена запись (позиция в списке: {index}):")
-                    print(f"ID: {f['id']}, Название: {f['name']}, Созвездие: {f['constellation']}, Видима: {f['is_visible']}, Радиус (солн.): {f['radius']}")
+                    print(f"ID: {record['id']}, Название: {record['name']}, Созвездие: {record['constellation']}, Видима: {record['is_visible']}, Радиус (солн.): {record['radius']}")
                     found = True
                     break
             if not found:
@@ -60,14 +51,7 @@ while True:
         except ValueError:
             print("Ошибка: ID должен быть целым числом.")
 
-
-
----------------------------------------------------------------------------------------------------------------
-
-
-
-elif choice == '3':
-        # Пункт "Добавить запись"
+    elif choice == 3:
         try:
             new_id = int(input("Введите ID новой записи (целое число): "))
             new_name = input("Введите название звезды: ")
@@ -84,11 +68,11 @@ elif choice == '3':
                 "radius": new_radius
             }
             
-            with open(FILE_NAME, 'r', encoding='utf-8') as f:
+            with open(file_name, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             data.append(new_record)
 
-            with open(FILE_NAME, 'w', encoding='utf-8') as f:
+            with open(file_name, 'w', encoding='utf-8') as f:
                 json.dump(data, f, indent=4, ensure_ascii=False)
             print(f"Запись с ID {new_id} добавлена.")
             operations_count += 1
@@ -96,18 +80,17 @@ elif choice == '3':
             print(f"Ошибка ввода данных: {e}")
 
     elif choice == '4':
-        # Пункт "Удалить запись по полю (id)"
         record_id_str = input("Введите ID записи для удаления: ")
         try:
             record_id = int(record_id_str)
-            with open(FILE_NAME, 'r', encoding='utf-8') as f:
+            with open(file_name, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             
             initial_len = len(data)
             data = [record for record in data if record['id'] != record_id]
             
             if len(data) < initial_len:
-                with open(FILE_NAME, 'w', encoding='utf-8') as f:
+                with open(file_name, 'w', encoding='utf-8') as f:
                     json.dump(data, f, indent=4, ensure_ascii=False)
                 print(f"Запись с ID {record_id} удалена.")
                 operations_count += 1
@@ -118,7 +101,6 @@ elif choice == '3':
             print("Ошибка: ID должен быть целым числом.")
 
     elif choice == '5':
-        # Пункт "Выйти из программы"
         print(f"Количество выполненных операций с записями: {operations_count}")
         break
     
