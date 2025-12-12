@@ -1,15 +1,15 @@
-import json# Добавляем библиотеку json
+import json
 
-file_name = "List.json"# Создаём переменную file_name и присвайваем ей название json файла
-operations_count = 0# Создаём переменную operations_count для подсчёта количества выполненных команд
+file_name = "List.json"
+operations_count = 0
 
-try:# Пробуем
-    with open(file_name, 'r', encoding = 'utf - 8') as File:# Открыть файл file_name на чтение
-        data = json.load(File)# Переменной data присвайваем содержимое файла file_name
-except FileNotFoundError:# Проверяем на ошибку FileNotFoundError
-    print(f"Файл {file_name} не найден!!!!!")# Если она есть, то выводим этот текст
-except Exception as e:# Проверяем на ошибку Exception e
-    print(f"Произошла ошибка: {e}")# Если она есть, то выводим этот текст
+try:
+    with open(file_name, 'r', encoding = 'utf - 8') as File:
+        data = json.load(File)
+except FileNotFoundError:
+    print(f"Файл {file_name} не найден!!!!!")
+except Exception as e:
+    print(f"Произошла ошибка: {e}")
 
 while True:
     print("---------------Меню---------------")
@@ -106,3 +106,4 @@ while True:
     
     else:
         print("Неверный ввод, пожалуйста, выберите пункт от 1 до 5.")
+
