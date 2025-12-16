@@ -1,5 +1,7 @@
 import json
 
+print("fgfjgfjhhgjhgjh")
+
 file_name = "List.json"
 operations_count = 0
 
@@ -106,4 +108,5 @@ while True:
     
     else:
         print("Неверный ввод, пожалуйста, выберите пункт от 1 до 5.")
+
 
