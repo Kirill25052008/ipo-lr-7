@@ -1,26 +1,6 @@
 import json
 
-print("fgfjgfjhhgjhgjh")
 
-file_name = "List.json"
-operations_count = 0
-
-try:
-    with open(file_name, 'r', encoding = 'utf - 8') as File:
-        data = json.load(File)
-except FileNotFoundError:
-    print(f"Файл {file_name} не найден!!!!!")
-except Exception as e:
-    print(f"Произошла ошибка: {e}")
-
-while True:
-    print("---------------Меню---------------")
-    print("1. Вывести все записи")
-    print("2. Вывести запись по полю (id)")
-    print("3. Добавить запись")
-    print("4. Удалить запись по полю (id)")
-    print("5. Выйти из программы")
-    print("----------------------------------")
 
     choice = int(input("Выберите пункт меню (1-5): "))
 
@@ -108,5 +88,6 @@ while True:
     
     else:
         print("Неверный ввод, пожалуйста, выберите пункт от 1 до 5.")
+
 
 
