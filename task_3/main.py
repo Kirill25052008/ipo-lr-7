@@ -8,42 +8,10 @@ stars = []
 def load_data():
     """Загрузка данных из файла"""
     global stars
-    if os.path.exists(filename):
-        with open(filename, "r", encoding="utf-8") as f:
-            stars = json.load(f)
-    else:
-        stars = [
-            {"id": 1, 
-             "name": "Сириус", 
-             "constellation": "Большой Пес", 
-             "is_visible": True, 
-             "radius": 1.711},
-            
-            {"id": 2, 
-             "name": "Канопус", 
-             "constellation": "Киль", 
-             "is_visible": True, 
-             "radius": 71.4},
-            
-            {"id": 3, "name": 
-             "Арктур", "constellation": 
-             "Волопас", 
-             "is_visible": True, 
-             "radius": 25.4},
-            
-            {"id": 4, 
-             "name": "Вега", 
-             "constellation": "Лира", 
-             "is_visible": True, 
-             "radius": 2.818},
-            
-            {"id": 5, 
-             "name": "Капелла", 
-             "constellation": "Возничий", 
-             "is_visible": True, 
-             "radius": 11.98},
-        ]
-        save_data()
+    os.path.exists(filename)
+    with open(filename, "r", encoding="utf-8") as f:
+        stars = json.load(f)
+    save_data()
 
 def save_data():
     """Сохранение данных в файл"""
@@ -186,4 +154,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
