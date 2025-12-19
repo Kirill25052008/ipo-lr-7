@@ -1,7 +1,7 @@
 import json
 import os
 
-filename = "stars.json"
+filename = "List.json"
 operations_count = 0
 stars = []
 
@@ -18,21 +18,25 @@ def load_data():
              "constellation": "Большой Пес", 
              "is_visible": True, 
              "radius": 1.711},
+            
             {"id": 2, 
              "name": "Канопус", 
              "constellation": "Киль", 
              "is_visible": True, 
              "radius": 71.4},
+            
             {"id": 3, "name": 
              "Арктур", "constellation": 
              "Волопас", 
              "is_visible": True, 
              "radius": 25.4},
+            
             {"id": 4, 
              "name": "Вега", 
              "constellation": "Лира", 
              "is_visible": True, 
              "radius": 2.818},
+            
             {"id": 5, 
              "name": "Капелла", 
              "constellation": "Возничий", 
@@ -182,3 +186,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
