@@ -1,7 +1,7 @@
 [
-    {"id" : 1, "name" : "Солнце", "constellation " : "нет", "is_visible " : "True", "radius " : 1.0},
-    {"id" : 2, "name" : "Сириус", "constellation " : "Большой Пес", "is_visible " : "True", "radius " : 1.7},
-    {"id" : 3, "name" : "Арктур", "constellation " : "Волопас", "is_visible " : "True", "radius " : 25.7},
-    {"id" : 4, "name" : "Вега", "constellation " : "Лира", "is_visible " : "True", "radius " : 2.7},
-    {"id" : 5, "name" : "Альтаир", "constellation " : "Орел", "is_visible " : "True", "radius " : 1.6}
+    {"id": 1, "name": "Сириус", "constellation": "Большой Пес", "is_visible": True, "radius": 1.711},
+    {"id": 2, "name": "Канопус", "constellation": "Киль", "is_visible": True, "radius": 71.4},
+    {"id": 3, "name": "Арктур", "constellation": "Волопас", "is_visible": True, "radius": 25.4},
+    {"id": 4, "name": "Вега", "constellation": "Лира", "is_visible": True, "radius": 2.818},
+    {"id": 5, "name": "Капелла", "constellation": "Возничий", "is_visible": True, "radius": 11.98},
 ]
